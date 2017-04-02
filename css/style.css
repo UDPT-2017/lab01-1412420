@@ -1,0 +1,385 @@
+color*/
+
+.gray-color {
+	color: #666 !important;
+}
+
+.green-color {
+	color: #5cb85c!important;
+}
+
+.rose-color {
+	color: #fe747a !important;
+}
+
+.green-bg {
+	background: #5cb85c!important;
+}
+
+.custom-btn {
+	outline: none !important;
+	background: none !important;
+	border: none !important;
+}
+
+body {
+	background: #fff !important;
+}
+
+/* custom padding bottom */
+.custom-bottom-margin {
+	margin-bottom: 0px !important;
+}
+
+/*header*/
+
+#header {
+	
+}
+
+#header #top-header {
+	background: url("../images/cover.png") no-repeat;
+	background-size: cover;
+}
+
+#header #social {
+	height: 35px;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
+#header #social #social-list {
+
+}
+
+#header #social #social-list a{
+	display: block;
+	width: 35px;
+	height: 35px;
+	float: right;
+	margin-left: 10px;
+	text-align: center;
+	padding: 5px;
+}
+
+#header #social #social-list i{
+	font-size: 1.9em;
+}
+
+#header #logo {
+	text-align: center;
+	height: 100px;
+	overflow: hidden;
+}
+
+#header #logo img{
+	height: 100px;
+	width: auto;
+}
+
+
+#header #nav-top #nav-custom{
+	margin: 0px;
+}
+
+.fixed-nav-nar {
+	position: fixed;
+	top: 0px;
+	z-index: 99;
+	width: 100%;
+}
+
+/* custom color nav bar */
+
+.navbar-default {
+  background-color: #5cb85c;
+  border-color: #539f53;
+}
+.navbar-default .navbar-brand {
+  color: #fff9f9;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: #fbfbfb;
+}
+.navbar-default .navbar-text {
+  color: #fff9f9;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #fff9f9;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #fbfbfb;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu {
+  background-color: #5cb85c;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a {
+  color: #fff9f9;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a:hover,
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a:focus {
+  color: #fbfbfb;
+  background-color: #539f53;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu > li > .divider {
+  background-color: #539f53;
+}
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+  color: #fbfbfb;
+  background-color: #539f53;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #fbfbfb;
+  background-color: #539f53;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+  color: #fbfbfb;
+  background-color: #539f53;
+}
+.navbar-default .navbar-toggle {
+  border-color: #539f53;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background-color: #539f53;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #fff9f9;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #fff9f9;
+}
+.navbar-default .navbar-link {
+  color: #fff9f9;
+}
+.navbar-default .navbar-link:hover {
+  color: #fbfbfb;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #fff9f9;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #fbfbfb;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #fbfbfb;
+    background-color: #539f53;
+  }
+}
+
+/**
+ * -----------------------------
+ */
+
+
+/* end header */
+
+/* main */
+
+#main {
+}
+
+/* left-menu */
+
+#left-menu {
+	border: 1px solid #ddd;
+	position: relative;
+}
+
+
+#left-menu .sidenav {
+	
+	padding: 0px;
+}
+
+#left-menu .sidenav li {
+	list-style-type: none;
+}
+
+#left-menu .sidenav li:first-child {
+	margin-top: 15px;
+}
+
+#left-menu .sidenav li:last-child {
+	margin-bottom: 15px;
+}
+
+
+#left-menu .sidenav #close {
+	position: absolute;
+	right: 15px;
+	top: 10px;
+	color: #fff;
+	display: none;
+	height: 35px;
+	width: 35px;
+	transition: 0.3s;
+}
+
+#left-menu .sidenav #close:hover {
+	color: #ddd;
+}
+
+#left-menu .sidenav #close i {
+	font-size: 2.9em;
+}
+
+#left-menu .sidenav ul {
+	margin: 0px;
+	padding: 0px;
+}
+
+#left-menu .sidenav li a {
+	display: block;
+	padding: 8px 8px 8px 32px;
+	font-size: 1.2em;
+	transition: 0.3s;
+	text-decoration: none;
+	color: #fff;
+}
+
+
+#left-menu-toggle {
+	padding: 5px;
+	display: none;
+}
+
+#left-menu-toggle a{
+	display: block;
+	width: 40px;
+	height: 40px;
+	margin-left: 20px;
+}
+
+#left-menu-toggle i{
+	font-size: 2em;
+}
+
+#left-menu .sidenav li a:hover {
+	color: #ddd;
+}
+
+@media screen and (max-width: 768px) {
+	#left-menu {
+		display: none;
+		position: fixed;
+		top: 0px;
+		left: 0px;
+		height: 100%;
+		z-index: 9999;
+		width: 300px;
+	}
+
+	#left-menu .sidenav li a {
+		font-size: 1.5em;
+	}
+
+	#left-menu-toggle {
+		display: block;
+	}
+
+	#left-menu .sidenav #close {
+		display: block;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	#left-menu {
+		display: block !important;
+	}
+}
+
+/* end left-menu */
+
+
+#main main {
+	border: 1px solid #ddd;
+}
+
+/* end main 
+
+/* footer */
+
+#footer {
+	margin-top: 20px;
+}
+
+#footer #about {
+	overflow: hidden;
+	text-align: center;
+	margin-top: 5px;
+	padding-top: 20px;	
+	border-top: 1px solid #ddd;
+}
+
+#footer #about li {
+	list-style-type: none;
+	display: inline;
+}
+
+#footer #about li a {
+	color: #333;
+	text-decoration: none;
+}
+
+#footer #content-footer {
+	margin-top: 30px;
+}
+
+#footer #content-footer #follow{
+	overflow: hidden;
+}
+
+#footer #content-footer #follow img{
+	width: 40px;
+	height: 30px;
+	border: 1px solid #ddd;
+	padding: 1px;
+	float: right;
+	margin-left: 10px;
+}
+
+#footer #content-footer #follow img:first-child{
+	margin-left: 15px;
+}
+#footer #content-footer #follow h4{
+	text-align: right;
+}
+
+#footer #copy-right{
+	margin-top: 15px;
+	border-top: 1px solid #ddd;
+	text-align: center;
+	padding: 10px;
+	color: #ddd;
+}
+
+.title-follow {
+	text-align: right;
+}
+
+@media screen and (max-width: 768px) {
+	.title-follow{
+		margin-top: 5px;
+		text-align: left;
+	}
+	#footer #content-footer #follow img{
+		float: left;
+	}
+}
+
+/* end footer */
