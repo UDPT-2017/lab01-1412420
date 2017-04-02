@@ -12,7 +12,13 @@
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-
+	<style>
+	 #map-contain {
+	   width: 100%;
+	   height: 400px;
+	   background-color: grey;
+	 }
+</style>
 </head>
 <body>	
 	<header id="header">
@@ -52,7 +58,7 @@
 				      <ul class="nav navbar-nav">
 				        <li><a href="index.html">Home</a></li>
 				        <li><a href="album.html">Album</a></li>
-				        <li><a href="blogs.html">Blogs</a></li> 
+				        <li class="active"><a href="blogs.html">Blogs</a></li> 
 				        <li><a href="about.html">About</a></li> 
 				      </ul>
 				      <ul class="nav navbar-nav navbar-right">
@@ -67,9 +73,7 @@
 	</header>
 	<div class="container">
 		<ol class="breadcrumb custom-bottom-margin">
-	    <li><a href="#">Home</a></li>
-	    <li><a href="#">Album</a></li>
-	    <li><a href="#">Album - Detail 1</a></li>      
+	    <li><a href="#">Blogs</a></li>
 	  </ol>
 	</div>
 	<div id="main">
@@ -95,109 +99,124 @@
 			</div>
 			
 			<div id="main-content" class="col-md-9">
-				<h1 class='green-bg title-content'>Album - Detail</h1>
-				<div id="image-list">
+				<h1 class='green-bg title-content'>Blog</h1>
+				<div id="blogs-list" class="">
+
+					<div class="blog">
+						<div class="title-post">
+							<div class="avartar">
+								<img src="images/dog.jpg" height="300" />
+							</div>
+							<div class="post-info">
+									<div class="user-post">
+									<a href="">Phan Huu Phuoc</a>
+								</div>
+								<div class="time">
+									<i class="fa fa-globe" aria-hidden="true"></i>&nbsp;&#183;
+									<time>20/2013</time>
+								</div>
+							</div>			
+						</div>
+						<div class="content-post">
+							<div class="main-content-post">
+								<span class="preview-content">
+									Đợt ra quân "giải cứu" vỉa hè của ông Đoàn Ngọc Hải,
+									Phó Chủ tịch UBND quận 1 đã gây hiệu ứng mạnh. Quyết không để "chiến dịch" 
+									của ông Hải... cô đơn, lãnh đạo các phường, quận khác trên địa bàn TPHCM cũng
+									"rời phòng lạnh" để giành lại đường cho người đi bộ.
+									Ngũ Lão, quận Gò Vấp cho biết, trong những ngày này, nhóm 
+									thợ của anh gồm 5 người phải “chạy sô” tới bốn 4-5 nhà và tăng ca thường xuyên. 
+									Thời gian làm từ 5 giờ sáng đến 8-9 giờ tối, rất ít có thời gian nghỉ tay để kịp 
+									giúp người dân sớm có mặt bằng làm ăn và tranh thủ kiếm thêm thu nhập<span class="see-more">...</span>
+								</span>				
+								<a href="./post-detail.html">See more</a>
+							</div>
+							<div class="detail-views">
+								<div class="n-vews"> 
+									<i class="fa fa-eye" aria-hidden="true"></i>
+									<span>20</span>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="blog">
+						<div class="title-post">
+							<div class="avartar">
+								<img src="images/dog.jpg" height="300" />
+							</div>
+							<div class="post-info">
+									<div class="user-post">
+									<a href="">Phan Huu Phuoc</a>
+								</div>
+								<div class="time">
+									<i class="fa fa-globe" aria-hidden="true"></i>&nbsp;&#183;
+									<time>20/2013</time>
+								</div>
+							</div>			
+						</div>
+						<div class="content-post">
+							<div class="main-content-post">
+								<span class="preview-content">
+									Đợt ra quân "giải cứu" vỉa hè của ông Đoàn Ngọc Hải,
+									Phó Chủ tịch UBND quận 1 đã gây hiệu ứng mạnh. Quyết không để "chiến dịch" 
+									của ông Hải... cô đơn, lãnh đạo các phường, quận khác trên địa bàn TPHCM cũng
+									"rời phòng lạnh" để giành lại đường cho người đi bộ.
+									Ngũ Lão, quận Gò Vấp cho biết, trong những ngày này, nhóm 
+									thợ của anh gồm 5 người phải “chạy sô” tới bốn 4-5 nhà và tăng ca thường xuyên. 
+									Thời gian làm từ 5 giờ sáng đến 8-9 giờ tối, rất ít có thời gian nghỉ tay để kịp 
+									giúp người dân sớm có mặt bằng làm ăn và tranh thủ kiếm thêm thu nhập<span class="see-more">...</span>
+								</span>				
+								<a href="./post-detail.html">See more</a>
+							</div>
+							<div class="detail-views">
+								<div class="n-vews"> 
+									<i class="fa fa-eye" aria-hidden="true"></i>
+									<span>20</span>
+								</div>
+							</div>
+						</div>
+					</div>
 
 
-					<div class="image">
-						<a href="image-detail.html">
-							<img src="images/dog.jpg" height="300" />
-						</a>
-						<div class="title-group">
-							<div class="author">
-								Thanh Thah
+					<div class="blog">
+						<div class="title-post">
+							<div class="avartar">
+								<img src="images/dog.jpg" height="300" />
 							</div>
-							<div class="views">
-								<p class="view">View</p>
-								<p class="n-view"><i class="fa fa-eye" aria-hidden="true"></i>&nbsp;12</p>
+							<div class="post-info">
+									<div class="user-post">
+									<a href="">Phan Huu Phuoc</a>
+								</div>
+								<div class="time">
+									<i class="fa fa-globe" aria-hidden="true"></i>&nbsp;&#183;
+									<time>20/2013</time>
+								</div>
+							</div>			
+						</div>
+						<div class="content-post">
+							<div class="main-content-post">
+								<span class="preview-content">
+									Đợt ra quân "giải cứu" vỉa hè của ông Đoàn Ngọc Hải,
+									Phó Chủ tịch UBND quận 1 đã gây hiệu ứng mạnh. Quyết không để "chiến dịch" 
+									của ông Hải... cô đơn, lãnh đạo các phường, quận khác trên địa bàn TPHCM cũng
+									"rời phòng lạnh" để giành lại đường cho người đi bộ.
+									Ngũ Lão, quận Gò Vấp cho biết, trong những ngày này, nhóm 
+									thợ của anh gồm 5 người phải “chạy sô” tới bốn 4-5 nhà và tăng ca thường xuyên. 
+									Thời gian làm từ 5 giờ sáng đến 8-9 giờ tối, rất ít có thời gian nghỉ tay để kịp 
+									giúp người dân sớm có mặt bằng làm ăn và tranh thủ kiếm thêm thu nhập<span class="see-more">...</span>
+								</span>				
+								<a href="./post-detail.html">See more</a>
 							</div>
-						</div>				
+							<div class="detail-views">
+								<div class="n-vews"> 
+									<i class="fa fa-eye" aria-hidden="true"></i>
+									<span>20</span>
+								</div>
+							</div>
+						</div>
 					</div>
 
-					<div class="image">
-						<a href="image-detail.html">
-							<img src="images/dog.jpg" height="300" />
-						</a>
-						<div class="title-group">
-							<div class="author">
-								Thanh Thah
-							</div>
-							<div class="views">
-								<p class="view">View</p>
-								<p class="n-view"><i class="fa fa-eye" aria-hidden="true"></i>&nbsp;12</p>
-							</div>
-						</div>				
-					</div>
-					<div class="image">
-						<a href="image-detail.html">
-							<img src="images/dog.jpg" height="300" />
-						</a>
-						<div class="title-group">
-							<div class="author">
-								Thanh Thah
-							</div>
-							<div class="views">
-								<p class="view">View</p>
-								<p class="n-view"><i class="fa fa-eye" aria-hidden="true"></i>&nbsp;12</p>
-							</div>
-						</div>				
-					</div>
-					<div class="image">
-						<a href="image-detail.html">
-							<img src="images/dog.jpg" height="300" />
-						</a>
-						<div class="title-group">
-							<div class="author">
-								Thanh Thah
-							</div>
-							<div class="views">
-								<p class="view">View</p>
-								<p class="n-view"><i class="fa fa-eye" aria-hidden="true"></i>&nbsp;12</p>
-							</div>
-						</div>				
-					</div>
-					<div class="image">
-						<a href="image-detail.html">
-							<img src="images/dog.jpg" height="300" />
-						</a>
-						<div class="title-group">
-							<div class="author">
-								Thanh Thah
-							</div>
-							<div class="views">
-								<p class="view">View</p>
-								<p class="n-view"><i class="fa fa-eye" aria-hidden="true"></i>&nbsp;12</p>
-							</div>
-						</div>				
-					</div>
-					<div class="image">
-						<a href="image-detail.html">
-							<img src="images/dog.jpg" height="300" />
-						</a>
-						<div class="title-group">
-							<div class="author">
-								Thanh Thah
-							</div>
-							<div class="views">
-								<p class="view">View</p>
-								<p class="n-view"><i class="fa fa-eye" aria-hidden="true"></i>&nbsp;12</p>
-							</div>
-						</div>				
-					</div>
-					<div class="image">
-						<a href="image-detail.html">
-							<img src="images/dog.jpg" height="300" />
-						</a>
-						<div class="title-group">
-							<div class="author">
-								Thanh Thah
-							</div>
-							<div class="views">
-								<p class="view">View</p>
-								<p class="n-view"><i class="fa fa-eye" aria-hidden="true"></i>&nbsp;12</p>
-							</div>
-						</div>				
-					</div>
 
 				</div>
 			</div>
