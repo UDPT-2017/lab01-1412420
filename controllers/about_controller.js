@@ -7,6 +7,7 @@ var dump = require('../helpers/dump_helper');
 
 
 router.get('/', function(req, res, next) {
+	req.breadcrumbs("About");
 	models.Team.findOne({
 		id: 1,
 		include: [models.User]
@@ -15,7 +16,8 @@ router.get('/', function(req, res, next) {
 		res.render(path.join('about','index'), {
 			title: 'About',
 			team: team,
-			about_active: "active"
+			about_active: "active",
+			breadcrumbs: req.breadcrumbs()
 		});
 	});
 	

@@ -28,8 +28,18 @@ app.engine('hbs', hbs.engine);
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'views'));
 
+// *** 
+
+// server.js 
+ 
+var breadcrumbs = require('express-breadcrumbs');
+app.use(breadcrumbs.init());
+ 
+// Set Breadcrumbs home information 
+app.use(breadcrumbs.setHome());
 
 
+// ---
 // 
 // 
 // uncomment after placing your favicon in /public
@@ -41,10 +51,10 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-var index = require('./routes/index');
-var albums = require('./routes/albums');
-var posts = require('./routes/posts');
-var about = require('./routes/about');
+var index = require('./controllers/index_controller');
+var albums = require('./controllers/albums_controller');
+var posts = require('./controllers/posts_controller');
+var about = require('./controllers/about_controller');
 
 app.use('/', index);
 app.use('/albums', albums);
