@@ -28,8 +28,18 @@ app.engine('hbs', hbs.engine);
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'views'));
 
+// *** 
+
+// server.js 
+ 
+var breadcrumbs = require('express-breadcrumbs');
+app.use(breadcrumbs.init());
+ 
+// Set Breadcrumbs home information 
+app.use(breadcrumbs.setHome());
 
 
+// ---
 // 
 // 
 // uncomment after placing your favicon in /public
