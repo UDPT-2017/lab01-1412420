@@ -1,0 +1,27 @@
+<h1 class='green-bg title-content'>About</h1>
+<div id="image-list">
+
+	{{#if team.Users }}
+		{{#each team.Users as |user| }}
+			<div id="about-us" class="">
+				<div class="col-md-4">
+					<div class="personal-img">
+						<img src="images/itachi.png" height="300" />
+					</div>
+				</div>
+				<div class="col-md-7">
+					<h2>{{ user.name }}</h2>
+					<p><span>MSSV:</span>{{ user.id }}</p>
+				</div>
+			</div>
+		{{/each}}
+	{{/if}}
+
+</div>
+
+<div id="map">
+	<h1 class='green-bg title-content'>Contact us</h1>
+	<div id="map-contain">
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.0738733476537!2d106.78043601440045!3d10.881985892249919!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174d89aad780e49%3A0x54542761d4c22175!2sKTX+Khu+B%2C+%C4%90HQG!5e0!3m2!1sen!2s!4v1491133044326" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+	</div>
+</div>

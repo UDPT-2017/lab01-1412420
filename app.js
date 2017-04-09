@@ -5,22 +5,33 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-
-
-var index = require('./routes/index');
-
 var app = express();
 app.use(express.static('public'));
-
 // view engine
 var exphbs  = require('express-handlebars');
-// view engine setup
-app.engine('hbs', exphbs({
-	defaultLayout: 'application',
-	extname: 'hbs'
-}));
-app.set('view engine', 'hbs');
 
+// truncate string 
+var truncate = require('truncate');
+
+
+// config view engine
+var app = express();
+var hbs = exphbs.create({
+    helpers: {
+      truncate: truncate,
+    },
+    defaultLayout: 'application',
+    partialsDir: ['views/partials/'],
+    extname: 'hbs'
+});
+app.engine('hbs', hbs.engine);
+app.set('view engine', 'hbs');
+app.set('views', path.join(__dirname, 'views'));
+
+
+
+// 
+// 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
@@ -29,8 +40,16 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', index);
 
+var index = require('./routes/index');
+var albums = require('./routes/albums');
+var posts = require('./routes/posts');
+var about = require('./routes/about');
+
+app.use('/', index);
+app.use('/albums', albums);
+app.use('/posts', posts);
+app.use('/about', about);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');

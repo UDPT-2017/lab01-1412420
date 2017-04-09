@@ -1,0 +1,22 @@
+<h1 class='green-bg title-content'>Album</h1>
+
+<div id="album-list">
+	
+	{{#if albums }}
+	  {{#each albums as |album|}}
+			<div class="col-md-6 col"> 
+				<div class="album">
+					<img src="../images/cat.jpg"  />
+					<div class="album-title">
+						<p class="author-al"><a href="#">{{ album.author }}</a></p>
+						<p class="views"><i class="fa fa-eye" aria-hidden="true"></i>&nbsp;{{ album.views }}</p>
+					</div>					
+				</div>
+				<a class="btn btn-default btn-detail" href="/albums/{{ album.id }}" >View Detail</a>
+			</div>
+		{{/each}}
+	{{else}}
+		<h3 class="alert alert-info">Albums are empty</h3>
+  {{/if}}
+
+</div>

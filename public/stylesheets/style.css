@@ -386,7 +386,6 @@ body {
 /* album */
 
 #album-list {
-	border: 1px solid red;
 	overflow: hidden;
 }
 

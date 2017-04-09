@@ -1,0 +1,34 @@
+	<h1 class='green-bg title-content'>Blog - Details</h1>
+	<div id="blogs-list" class="">
+
+		<div class="blog">
+			<div class="title-post">
+				<div class="avartar">
+					<img src="../images/dog.jpg" height="300" />
+				</div>
+				<div class="post-info">
+						<div class="user-post">
+						<a href="">{{ post.User.name }}</a>
+					</div>
+					<div class="time">
+						<i class="fa fa-globe" aria-hidden="true"></i>&nbsp;&#183;
+						<time>{{ post.createdAt }}</time>
+					</div>
+				</div>			
+			</div>
+			<div class="content-post">
+				<div class="main-content-post">
+					<span class="preview-content">
+						{{ post.content }}
+					</span>				
+				</div>
+				<div class="detail-views">
+					<div class="n-vews"> 
+						<i class="fa fa-eye" aria-hidden="true"></i>
+						<span>{{ post.view }}</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
