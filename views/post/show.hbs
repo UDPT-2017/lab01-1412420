@@ -1,4 +1,5 @@
-	<h1 class='green-bg title-content'>Blog - Details</h1>
+<h1 class='green-bg title-content'>Blog - Details</h1>
+{{#if post }}
 	<div id="blogs-list" class="">
 
 		<div class="blog">
@@ -30,5 +31,7 @@
 				</div>
 			</div>
 		</div>
-
 	</div>
+{{else}}
+	<h3 class="alert alert-info">Posts are empty</h3>
+{{/if}}
