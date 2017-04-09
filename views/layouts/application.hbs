@@ -1,10 +1,62 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>{{title}}</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    {{{body}}}
-  </body>
+<head>
+	<title>Demo Layout</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	
+	<link rel="stylesheet" type="text/css" href="stylesheets/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="stylesheets/reset.css">
+	<link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+
+</head>
+<body>	
+	{{> header }}
+	{{> breadcrumb }}
+
+	<div id="main">
+		<div id="content-body" class="container">
+			{{> sidebar }}
+			
+			<div id="main-content" class="col-md-9">
+					{{{ body }}}
+			</div>
+		</div>
+	</div>
+	
+	{{> footer }}
+
+	<script type="text/javascript">
+		var topHeader = $("#top-header");
+		var topHeight = topHeader.outerHeight();
+		var nav = $("#nav-top");		
+		$(window).scroll(function(e){
+			var top = (window.pageYOffset || document.scrollTop)  - (document.clientTop || 0);
+			if(top >= topHeight) {
+				nav.addClass("fixed-nav-nar green-bg");
+			}else {
+				nav.removeClass("fixed-nav-nar green-bg");
+			}
+		});
+
+		(function(){
+			var closeBtn = document.getElementById("close");
+			var openBtn = document.getElementById("open");
+			var leftMenu = document.getElementById("left-menu");
+			var btnToggle = document.get
+			closeBtn.addEventListener('click',function(e){
+				leftMenu.style.display = "none";
+			})
+			openBtn.addEventListener('click',function(e){
+				leftMenu.style.display = "block";
+			})
+		})();
+	</script>
+
+</body>
 </html>
