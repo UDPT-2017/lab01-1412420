@@ -1,2 +1,13 @@
 <h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<ul class="people_list">
+  {{#each users as |user|}}
+    <li>
+    	{{user.name}}
+    	<ul>
+    		{{#each user.Posts as |post|}}
+					<li>{{ post.content }}</li>
+    		{{/each}}
+    	</ul>
+    </li>
+  {{/each}}
+</ul>
