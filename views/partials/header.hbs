@@ -15,7 +15,7 @@
 		</div>
 		<div id="banner">
 			<div id="logo">
-				<a href="#"><img src="images/manu.png" alt="logo-page"></a>
+				<a href="#"><img src="../images/manu.png" alt="logo-page"></a>
 			</div>
 		</div>
 	</div>
@@ -33,10 +33,10 @@
 				    </div>
 				    <div class="collapse navbar-collapse" id="myNavbar">
 				      <ul class="nav navbar-nav">
-				        <li class="active"><a href="index.html">Home</a></li>
-				        <li><a href="album.html">Album</a></li>
-				        <li><a href="blogs.html">Blogs</a></li> 
-				        <li><a href="about.html">About</a></li> 
+				        <li class="{{ home_active }}"><a href="/">Home</a></li>
+				        <li class="{{ albums_active }}"><a href="/albums">Albums</a></li>
+				        <li class="{{ blogs_active }}"><a href="/posts">Blogs</a></li> 
+				        <li class="{{ about_active }}"><a href="/about">About</a></li> 
 				      </ul>
 				      <ul class="nav navbar-nav navbar-right">
 				        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>

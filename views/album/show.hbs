@@ -1,0 +1,25 @@
+<h1 class='green-bg title-content'>Album - Detail</h1>
+<div id="image-list">
+	
+	{{#if photos}}
+		{{#each photos as |photo|}}
+			<div class="image">
+				<a href="#">
+					<img src="../images/dog.jpg" height="300" />
+				</a>
+				<div class="title-group">
+					<div class="author">
+						{{ photo.author }}
+					</div>
+					<div class="views">
+						<p class="view">View</p>
+						<p class="n-view"><i class="fa fa-eye" aria-hidden="true"></i>&nbsp;{{ photo.views }}</p>
+					</div>
+				</div>				
+			</div>
+		{{/each}}
+	{{else}}
+		<h3 class="alert alert-info">Photos are empty</h3>
+	{{/if}}
+	
+</div>

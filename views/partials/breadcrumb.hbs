@@ -1,5 +1,10 @@
-	<div class="container">
-		<ol class="breadcrumb custom-bottom-margin">
-	    <li><a href="#">Home</a></li>     
-	  </ol>
-	</div>
+
+<div class="container">
+	<ol class="breadcrumb custom-bottom-margin">
+	{{#if breadcrumbs}}
+		{{#each breadcrumbs as |breadcrumb| }}
+			<li><a href="{{ breadcrumb.url }}">{{breadcrumb.name}}</a></li>  
+		{{/each}}
+	{{/if}}
+  </ol>
+</div>
