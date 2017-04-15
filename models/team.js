@@ -10,6 +10,9 @@ module.exports = function(sequelize, DataTypes) {
           onDelete: "CASCADE",
           foreignKey: 'team_id'
         });
+      },
+      getAllTeam: function(doem) {
+        return Team.findAll({attributes: ['id', 'name']})
       }
     }
   });

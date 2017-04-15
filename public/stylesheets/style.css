@@ -638,3 +638,17 @@ body {
 }
 
 /* end footer */
+
+.erorrs-su li {
+	font-size: 10px;
+	color: red;
+}
+
+.erorrs-su li:first-child{
+	margin-top: 2px;
+}
+
+.myaleart {
+  margin-bottom: 0px;
+  padding: 10px;
+}

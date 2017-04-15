@@ -8,7 +8,7 @@
         <h4><i class="fa fa-lock" aria-hidden="true"></i> Login</h4>
       </div>
       <div class="modal-body" style="padding:30px">
-        <form id="form-login-target" role="form" method="post" action="/sessions/login">
+        <form >
           <div class="form-group">
             <label for="usrname"><i class="fa fa-envelope" aria-hidden="true"></i> Email </label>
             <input type="text" class="form-control" id="email-user" name="email" placeholder="Enter email" required>
@@ -20,11 +20,11 @@
           <div id="errors-lg">
           
           </div>
-            <button type="submit" class="btn btn-success btn-block"><i class="fa fa-power-off" aria-hidden="true"></i> Login</button>
+            <button type="submit" id="form-login-target" class="btn btn-success btn-block"><i class="fa fa-power-off" aria-hidden="true"></i> Login</button>
         </form>
       </div>
       <div class="modal-footer">
-        <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><i class="fa fa-times" aria-hidden="true"></i> Cancel</button>
+        <button type="submit"class="btn btn-danger btn-default pull-left" data-dismiss="modal"><i class="fa fa-times" aria-hidden="true"></i> Cancel</button>
         <p>Not a member? <a href="#">Sign Up</a></p>
         <p>Forgot <a href="#">Password?</a></p>
       </div>
@@ -41,30 +41,49 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4><i class="fa fa-user" aria-hidden="true"></i> Signup</h4>
+        <h4 class="col-xs-4"><i class="fa fa-user" aria-hidden="true"></i> Signup</h4>
+        <div class="col-xs-7" id="success-su">
+        </div>
       </div>
       <div class="modal-body" style="padding:20px 20px 40px">
-        <form role="form">
+        <form>
           <div class="form-group">
-            <label for="usrname"><i class="fa fa-user" aria-hidden="true"></i> Name </label>
-            <input type="email" class="form-control" id="name-su" placeholder="Enter name">
-          </div>
-          <div class="form-group">
-            <label for="usrname"><i class="fa fa-envelope" aria-hidden="true"></i> Email </label>
-            <input type="email" class="form-control" id="email-su" placeholder="Enter email">
+            <label for="name-su"><i class="fa fa-user" aria-hidden="true"></i> Name </label>
+            <input type="text" class="form-control" id="name-su" name="name" placeholder="Enter name">
+            <ul class="erorrs-su" id="errors-su-name">
+            </ul>
           </div>
           <div class="form-group">
-            <label for="psw"><i class="fa fa-key" aria-hidden="true"></i> Password</label>
-            <input type="text" class="form-control" id="password-su" placeholder="Enter password">
+            <label for="student-id"><i class="fa fa-id-card" aria-hidden="true"></i> Student Id </label>
+            <input type="text" class="form-control" id="student-id" name="student_id" placeholder="Enter name">
+            <ul class="erorrs-su" id="errors-su-student_id">
+            </ul>
           </div>
           <div class="form-group">
-            <label for="psw"><i class="fa fa-key" aria-hidden="true"></i> Confirm password </label>
-            <input type="text" class="form-control" id="password-su-cf" placeholder="Confirmation password">
+            <label for="email-su"><i class="fa fa-envelope" aria-hidden="true"></i> Email </label>
+            <input type="email" class="form-control" id="email-su" name="email" placeholder="Enter email">
+            <ul class="erorrs-su" id="errors-su-email">
+            </ul>
           </div>
-          <div id="errors-su">
-            
+          <div class="form-group">
+            <label for="password-su"><i class="fa fa-key" aria-hidden="true"></i> Password</label>
+            <input type="password" class="form-control" id="password-su" name="password" placeholder="Enter password">
+            <ul class="erorrs-su" id="errors-su-password">
+            </ul>
           </div>
-            <button type="submit" class="btn btn-success btn-block"><i class="fa fa-power-off" aria-hidden="true"></i> Login</button>
+          <div class="form-group">
+            <label for="repassword-su"><i class="fa fa-key" aria-hidden="true"></i> Confirm password </label>
+            <input type="password" class="form-control" id="repassword-su" name="password_confirmation" placeholder="Confirmation password">
+            <ul class="erorrs-su" id="errors-su-password_confirmation">
+            </ul>
+          </div>
+          <div class="form-group">
+            <label for="team_id"> Your team: </label>
+            <select class="form-control" id="team_id" name="team_id">
+              <option value="1"> Team 1 </option>
+            </select>
+          </div>
+          <button type="submit" id="form-signup-target" class="btn btn-success btn-block"><i class="fa fa-power-off" aria-hidden="true"></i> Signup </button>
         </form>
       </div>
 
@@ -72,9 +91,8 @@
     
   </div>
 </div> 
-
 <script type="text/javascript">
-  $( "#form-login-target" ).submit(function( event ) {
+  $( "#form-login-target" ).click(function( event ) {
     event.preventDefault();
     var data = {
       email: $("#email-user").val(),
@@ -102,4 +120,84 @@
     });
   });
 
+  var btnSignup = $("#form-signup-target");
+  btnSignup.click(function( event ) {
+    event.preventDefault();
+    btnSignup.prop("disabled",true);
+    clearErrors();
+    var data = {
+      name: $("#name-su").val(),
+      student_id: $("#student-id").val(),
+      email: $("#email-su").val(),
+      password: $("#password-su").val(),
+      password_confirmation: $("#repassword-su").val(),
+      team_id: $("#team_id").val(),
+    }
+    $.ajax({
+      url: "/sessions/signup",
+      type: "post",
+      headers: {          
+        Accept: "application/json",         
+        "Content-Type": "application/json"   
+      }, 
+      data: JSON.stringify(data)
+    })
+    .done(function(xhr) {
+      if(xhr.ok) {
+        $("#success-su").html('<div class="alert alert-info myaleart">Signup successfully, please login !</div>');
+
+      } else {
+        var errors = groupErrors(JSON.parse(xhr.errors));
+        console.log(errors);
+        applyErrors("errors-su-name", errors["name"]);
+        applyErrors("errors-su-student_id", errors["student_id"]);
+        applyErrors("errors-su-email", errors["email"]);
+        applyErrors("errors-su-password", errors["password"]);
+        applyErrors("errors-su-password_confirmation", errors["password_confirmation"]);
+      }
+    })
+    .fail(function() {
+      console.log("ERROR !!!");
+    })
+    .always(function(){
+      btnSignup.prop("disabled",false);
+    });
+  });
+  
+  function groupErrors(errors) {       
+    var l = errors.length;
+    var result = {}
+
+    for(var i = 0; i < l ; i++) {
+      if(result[errors[i].path] == undefined) {
+        result[errors[i].path] = [];
+      }
+      result[errors[i].path].push(errors[i].message);
+    }
+    return result;
+  } 
+
+  function applyErrors(idUL,errors) {
+    try {
+      var l = errors.length;
+      if(l == 0)
+        return;
+      var result = "";
+      for(var i = 0; i < l; i++) {
+        result += '<li>' + errors[i] + '</li>';
+      }
+      $("#" + idUL).html(result);
+    }
+    catch(err) {
+      $("#" + idUL).html("");
+    }
+  }
+
+  function clearErrors() {
+    $("#errors-su-name").html("");
+    $("#errors-su-student_id").html("");
+    $("#errors-su-email").html("");
+    $("#errors-su-password").html("");
+    $("#errors-su-password_confirmation").html("");
+  }
 </script>

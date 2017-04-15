@@ -1,12 +1,19 @@
 var express = require('express');
 var router = express.Router();
-
+var models = require('../models');
 var passportLocal = require('../auth/local');
 
-router.get('/signup', function(req, res, next){
-	res.send("HHAAHAHAH");
+router.post('/signup', function(req, res, next){
+  console.log(req.body);
+	models.User.create(req.body).then(function(thisUser){
+    res.send({ok: true, user: JSON.stringify(thisUser), error: null});
+  }).catch(function(error){
+      console.log("--------------- PARAMS ---------------");
+      console.log(error);
+      console.log(error.errors);
+    res.send({ok: false, user: null, errors: JSON.stringify(error.errors)});
+  });
 });
-
 
 router.post('/login', function(req, res, next) {
   passportLocal.authenticate('local', function(err, user, info) {

@@ -12,7 +12,7 @@ passport.use(new LocalStrategy({
     User.findOne({ where: { email: username }}).then(function(user) {
       if (!user) {
         done(null, false, { message: 'Unknown user' });
-      } else if (password != user.password) {
+      } else if (!user.authenticate(password)) {
         done(null, false, { message: 'Invalid password'});
       } else {
         done(null, user);
