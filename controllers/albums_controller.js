@@ -14,7 +14,8 @@ router.get('/', function(req, res, next) {
 				title: 'Albums',
 				albums: albums,
 				albums_active: "active",
-				breadcrumbs: req.breadcrumbs()
+				breadcrumbs: req.breadcrumbs(),
+				user: req.user
 			});
 	})
 });
@@ -29,7 +30,8 @@ router.get('/:id', function(req, res, next) {
 			title: 'Photos',
 			photos: photos, 
 			albums_active: "active",
-			breadcrumbs: req.breadcrumbs()
+			breadcrumbs: req.breadcrumbs(),
+			user: req.user
 		});
 	});
 });

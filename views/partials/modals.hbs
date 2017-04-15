@@ -1,0 +1,105 @@
+<!-- Modal -->
+<div class="modal fade" id="modal-login" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4><i class="fa fa-lock" aria-hidden="true"></i> Login</h4>
+      </div>
+      <div class="modal-body" style="padding:30px">
+        <form id="form-login-target" role="form" method="post" action="/sessions/login">
+          <div class="form-group">
+            <label for="usrname"><i class="fa fa-envelope" aria-hidden="true"></i> Email </label>
+            <input type="text" class="form-control" id="email-user" name="email" placeholder="Enter email" required>
+          </div>
+          <div class="form-group">
+            <label for="psw"><i class="fa fa-key" aria-hidden="true"></i> Password</label>
+            <input type="password" class="form-control" id="password-user" name="password" placeholder="Enter password" required>
+          </div>
+          <div id="errors-lg">
+          
+          </div>
+            <button type="submit" class="btn btn-success btn-block"><i class="fa fa-power-off" aria-hidden="true"></i> Login</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><i class="fa fa-times" aria-hidden="true"></i> Cancel</button>
+        <p>Not a member? <a href="#">Sign Up</a></p>
+        <p>Forgot <a href="#">Password?</a></p>
+      </div>
+    </div>
+    
+  </div>
+</div> 
+
+
+<!-- Modal -->
+<div class="modal fade" id="modal-signup" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4><i class="fa fa-user" aria-hidden="true"></i> Signup</h4>
+      </div>
+      <div class="modal-body" style="padding:20px 20px 40px">
+        <form role="form">
+          <div class="form-group">
+            <label for="usrname"><i class="fa fa-user" aria-hidden="true"></i> Name </label>
+            <input type="email" class="form-control" id="name-su" placeholder="Enter name">
+          </div>
+          <div class="form-group">
+            <label for="usrname"><i class="fa fa-envelope" aria-hidden="true"></i> Email </label>
+            <input type="email" class="form-control" id="email-su" placeholder="Enter email">
+          </div>
+          <div class="form-group">
+            <label for="psw"><i class="fa fa-key" aria-hidden="true"></i> Password</label>
+            <input type="text" class="form-control" id="password-su" placeholder="Enter password">
+          </div>
+          <div class="form-group">
+            <label for="psw"><i class="fa fa-key" aria-hidden="true"></i> Confirm password </label>
+            <input type="text" class="form-control" id="password-su-cf" placeholder="Confirmation password">
+          </div>
+          <div id="errors-su">
+            
+          </div>
+            <button type="submit" class="btn btn-success btn-block"><i class="fa fa-power-off" aria-hidden="true"></i> Login</button>
+        </form>
+      </div>
+
+    </div>
+    
+  </div>
+</div> 
+
+<script type="text/javascript">
+  $( "#form-login-target" ).submit(function( event ) {
+    event.preventDefault();
+    var data = {
+      email: $("#email-user").val(),
+      password: $("#password-user").val()
+    }
+    $.ajax({
+      url: "/sessions/login",
+      type: "post",
+      headers: {          
+        Accept: "application/json",         
+        "Content-Type": "application/json"   
+      }, 
+      data: JSON.stringify(data)
+    })
+    .done(function(xhr) {
+      if(xhr.ok) {
+        $("#nav-user-info").html('<li><a href="" ><i class="fa fa-user" aria-hidden="true"></i> ' + xhr.user.name + '</a></li><li><a href="/sessions/logout" ><i class="fa fa-sign-out" aria-hidden="true"></i></a></li>');
+        $('#modal-login').modal('toggle');
+      } else {
+        $("#errors-lg").html('<div class="alert alert-danger"> Wrong user name or password </div>');
+      }
+    })
+    .fail(function() {
+      console.log("ERROR !!!");
+    });
+  });
+
+</script>

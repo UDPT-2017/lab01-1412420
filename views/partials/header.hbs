@@ -38,9 +38,14 @@
 				        <li class="{{ blogs_active }}"><a href="/posts">Blogs</a></li> 
 				        <li class="{{ about_active }}"><a href="/about">About</a></li> 
 				      </ul>
-				      <ul class="nav navbar-nav navbar-right">
-				        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-				        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+				      <ul class="nav navbar-nav navbar-right" id="nav-user-info">
+					      {{#if user }}
+							    <li><a href="" ><i class="fa fa-user" aria-hidden="true"></i>	{{ user.name }} </a></li>
+							    <li><a href="/sessions/logout" ><i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
+						  	{{else}}
+					        <li><a href="" data-toggle="modal" data-target="#modal-login" ><i class="fa fa-sign-in" aria-hidden="true"></i>	Login </a></li>
+					        <li><a href=""  data-toggle="modal" data-target="#modal-signup"><i class="fa fa-user" aria-hidden="true"></i> Sign Up</a></li>
+				        {{/if}}
 				      </ul>
 				    </div>
 				  </div>

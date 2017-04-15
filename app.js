@@ -5,6 +5,9 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+var passport = require('passport');
+var session = require('express-session');
+
 var app = express();
 app.use(express.static('public'));
 // view engine
@@ -13,12 +16,11 @@ var exphbs  = require('express-handlebars');
 // truncate string 
 var truncate = require('truncate');
 
-
 // config view engine
 var app = express();
 var hbs = exphbs.create({
     helpers: {
-      truncate: truncate,
+      truncate: truncate
     },
     defaultLayout: 'application',
     partialsDir: ['views/partials/'],
@@ -50,16 +52,28 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(session({
+  secret: 'keyboard cat',
+  resave: true,
+  saveUninitialized: true
+}));
+app.use(passport.initialize());
+app.use(passport.session());
 
 var index = require('./controllers/index_controller');
 var albums = require('./controllers/albums_controller');
 var posts = require('./controllers/posts_controller');
 var about = require('./controllers/about_controller');
+var sessions = require('./controllers/sessions_controller');
 
+// authentication
+var auth = require("./auth/authentication");
 app.use('/', index);
-app.use('/albums', albums);
-app.use('/posts', posts);
-app.use('/about', about);
+app.use('/albums', auth, albums);
+app.use('/posts', auth, posts);
+app.use('/about', auth, about);
+app.use('/sessions', sessions);
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
