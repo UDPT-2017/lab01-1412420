@@ -1,12 +1,11 @@
-# BT-UDPT-1 - *Name of your app*
+# BT-UDPT-1 - *Lap01-UDPT*
 
-**Name of your app** là một bài tập 1 tại môn UDPT.
+**Lap01-UDPT** là một bài tập 1 tại môn UDPT.
 
 Thành viên:
-* [ ] **MSSV1** Tên sinh viên 1 (tên tài khoản github)
-* [ ] **MSSV2** Tên sinh viên 2 (tên tài khoản github)
+* [x] **1412420** Phan Hữu Phước (https://github.com/Huuphuoc19)
 
-URL: **URL hosting của bài tập**
+URL: [heroku](https://infinite-citadel-87410.herokuapp.com/)
 
 ## Yêu cầu
 
@@ -53,8 +52,7 @@ Liệt kê các **yêu cầu nâng cao** đã thực hiện:
 
 Link ảnh GIF demo ứng dụng:
 
-![Video Walkthrough](demo.gif)
-
+![Video Walkthrough](./public/images/1.gif)
 Tạo ảnh GIF với chương trình [LiceCap](http://www.cockos.com/licecap/).
 
 
