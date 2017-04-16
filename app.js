@@ -69,7 +69,7 @@ var sessions = require('./controllers/sessions_controller');
 // authentication
 var auth = require("./auth/authentication");
 app.use('/', index);
-app.use('/albums', albums);
+app.use('/albums', auth, albums);
 app.use('/posts', auth, posts);
 app.use('/about', auth, about);
 app.use('/sessions', sessions);
