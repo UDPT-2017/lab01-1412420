@@ -1,12 +1,11 @@
-# BT-UDPT-1 - *Name of your app*
+# BT-UDPT-1 - *Lap01-UDPT*
 
-**Name of your app** là một bài tập 1 tại môn UDPT.
+**Lap01-UDPT** là một bài tập 1 tại môn UDPT.
 
 Thành viên:
-* [ ] **MSSV1** Tên sinh viên 1 (tên tài khoản github)
-* [ ] **MSSV2** Tên sinh viên 2 (tên tài khoản github)
+* [x] **1412420** Phan Hữu Phước (https://github.com/Huuphuoc19)
 
-URL: **URL hosting của bài tập**
+URL: [heroku](https://infinite-citadel-87410.herokuapp.com/)
 
 ## Yêu cầu
 
@@ -31,13 +30,13 @@ Yêu cầu **bắt buộc**
 * [x] Cho phép người dùng biết họ đang ở trang nào (sử dụng breadcrumb, highlight navigation bar,...). (**MSSV**)
 
 Yêu cầu **không bắt buộc**:
-* [ ] Cho phép người dùng đăng nhập, đăng xuất, đăng ký thông tin tài khoản. (**MSSV**)
+* [x] Cho phép người dùng đăng nhập, đăng xuất, đăng ký thông tin tài khoản. (**MSSV**)
 * [ ] Có thể xem danh sách các comment của từng bài viết.  (**MSSV**)
 * [ ] Cho phép người dùng đã đăng nhập đăng thêm bài viết mới. (**MSSV**)
 * [ ] Cho phép người dùng đã đăng nhập comment cho bài viết. (**MSSV**)
 * [ ] Quản lý thêm thông tin tag cho mỗi bài viết. Mỗi bài viết có thể bao gồm nhiều tag và mỗi tag có thể có nhiều bài viết. (**MSSV**)
 * [ ] Cho phép người dùng đăng nhập bằng tài khoản facebook và lấy ảnh đại diện, email từ facebook. (**MSSV**)
-* [ ] Cho phép người dùng tạo album và đăng ảnh mới vào album. (**MSSV**)
+* [x] Cho phép người dùng tạo album và đăng ảnh mới vào album. (**MSSV**)
 * [ ] Chỉ cho phép người tạo album được phép thêm, xóa ảnh mình đã đăng vào album. (**MSSV**)
 * [ ] Chỉ cho phép người tạo bài viết được phép chỉnh sửa bài viết mình đã đăng. (**MSSV**)
 * [ ] Cho phép người dùng layout bài viết bằng markdown. (**MSSV**)
@@ -45,16 +44,15 @@ Yêu cầu **không bắt buộc**:
 * [ ] Gửi mail cho tác giả khi có người dùng comment vào bài viết của họ. (**MSSV**)
 
 Liệt kê các **yêu cầu nâng cao** đã thực hiện:
-* [ ] Chức năng 1
-* [ ] Chức năng 2
+* [x] Cho phép người dùng đăng nhập, đăng xuất, đăng ký thông tin tài khoản.
+* [x] Cho phép người dùng tạo album và đăng ảnh mới vào album.
 
 
 ## Demo
 
 Link ảnh GIF demo ứng dụng:
 
-![Video Walkthrough](demo.gif)
-
+![Video Walkthrough](./public/images/1.gif)
 Tạo ảnh GIF với chương trình [LiceCap](http://www.cockos.com/licecap/).
 
 
