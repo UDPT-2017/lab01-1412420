@@ -15,7 +15,8 @@ router.get('/', function(req, res, next) {
 				title: 'Post',
 				posts: posts,
 				blogs_active: "active",
-				breadcrumbs: req.breadcrumbs()
+				breadcrumbs: req.breadcrumbs(),
+				user: req.user
 			});
 	})
 });
@@ -32,7 +33,8 @@ router.get('/:id', function(req, res, next) {
 			title: 'Post',
 			post: post,
 			blogs_active: "active",
-			breadcrumbs: req.breadcrumbs()
+			breadcrumbs: req.breadcrumbs(),
+			user: req.user
 		});
 	})
 });

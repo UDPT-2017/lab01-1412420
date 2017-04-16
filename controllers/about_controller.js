@@ -5,7 +5,6 @@ var models = require('../models');
 var escapeStringRegexp = require('escape-string-regexp');
 var dump = require('../helpers/dump_helper');
 
-
 router.get('/', function(req, res, next) {
 	req.breadcrumbs("About");
 	models.Team.findOne({
@@ -17,7 +16,8 @@ router.get('/', function(req, res, next) {
 			title: 'About',
 			team: team,
 			about_active: "active",
-			breadcrumbs: req.breadcrumbs()
+			breadcrumbs: req.breadcrumbs(),
+			user: req.user
 		});
 	});
 	
