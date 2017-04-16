@@ -20,6 +20,13 @@ router.get('/', function(req, res, next) {
 	})
 });
 
+router.get('/new', function(req, res, next) {
+	res.render(path.join('album','new'), {
+		breadcrumbs: req.breadcrumbs(),
+		user: req.user
+	});
+});
+
 router.get('/:id', function(req, res, next) {
 	var albumId = escapeStringRegexp(req.params.id);
 	req.breadcrumbs([{name: "Album", url: "/albums"},{name: albumId }]);

@@ -51,7 +51,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
+app.use(express.static(path.join(__dirname, 'bower_components')));
 app.use(session({
   secret: 'keyboard cat',
   resave: true,
@@ -69,7 +69,7 @@ var sessions = require('./controllers/sessions_controller');
 // authentication
 var auth = require("./auth/authentication");
 app.use('/', index);
-app.use('/albums', auth, albums);
+app.use('/albums', albums);
 app.use('/posts', auth, posts);
 app.use('/about', auth, about);
 app.use('/sessions', sessions);
