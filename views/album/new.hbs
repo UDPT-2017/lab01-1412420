@@ -1,6 +1,6 @@
 <h1 class='green-bg title-content'>Create</h1>
 <div style="margin-top: 20px;">
-	<form action="/albums/create" method="post" enctype="multipart/form-data">
+	<form id="uploadForm" action="/albums/create" method="post" enctype="multipart/form-data">
 	  <div class="form-group">
 	    <label for="album">Album cover</label>
 	    <input type="file" class="form-control" name="album" id="album">
@@ -27,6 +27,7 @@ function dump(a) {console.log(a)}
 	});	
 
 	$("#uploadForm").on("click",".photos",function(evt){
+		dump(1);
 		evt.preventDefault();
 		var form = document.getElementById("uploadForm");
 		form.removeChild(this.parentElement);
