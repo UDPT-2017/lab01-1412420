@@ -1,6 +1,6 @@
 <h1 class='green-bg title-content'>Create</h1>
-<div>
-	<form ref='uploadForm' id='uploadForm'  action='/upload' method='post' encType="multipart/form-data">
+<div style="margin-top: 20px;">
+	<form action="/albums/create" method="post" enctype="multipart/form-data">
 	  <div class="form-group">
 	    <label for="album">Album cover</label>
 	    <input type="file" class="form-control" name="album" id="album">
@@ -17,20 +17,18 @@ function dump(a) {console.log(a)}
 	var addBtnAddPhoto = $("#add-photo");
 	var i = 0;
 	function photoInput(i) {
-		return '<div class="form-group"><label for="photo#'+ i +'">Photo#' + i + '</label><input type="file" class="form-control" name="photo#' + i +'"id="photo#'+ i +'"><a href="#" class="photos"><i class="fa fa-times" aria-hidden="true"></i>Remove</a></div>'
+		return '<div class="form-group"><label for="photo#'+ i +'">Photo#' + i + '</label><input type="file" class="form-control" name="photos" id="photo#'+ i +'"><a href="#" class="photos"><i class="fa fa-times" aria-hidden="true"></i>Remove</a></div>'
 	}
 	var i = 0;
 	addBtnAddPhoto.click(function(e){
 		e.preventDefault();
 		parent = addBtnAddPhoto.parent();
-		dump(parent);
-		dump(parent.prev());
 		parent.prev().after(photoInput(++i));
-		$("#uploadForm .photos").bind("click",function(evt){
-			evt.preventDefault();
-			var form = document.getElementById("uploadForm");
-			var div = this.parentElement;
-			form.removeChild(div);
-		});
 	});	
+
+	$("#uploadForm").on("click",".photos",function(evt){
+		evt.preventDefault();
+		var form = document.getElementById("uploadForm");
+		form.removeChild(this.parentElement);
+	});
 </script>
