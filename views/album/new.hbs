@@ -1,0 +1,34 @@
+<h1 class='green-bg title-content'>Create</h1>
+<div style="margin-top: 20px;">
+	<form action="/albums/create" method="post" enctype="multipart/form-data">
+	  <div class="form-group">
+	    <label for="album">Album cover</label>
+	    <input type="file" class="form-control" name="album" id="album">
+	  </div>
+	  <div class="form-group">
+	    <a href="#" id="add-photo"><i class="fa fa-plus" aria-hidden="true"></i> Add photos</a>
+	  </div>
+	  <button type="submit" class="btn btn-default">Submit</button>
+	</form>
+</div>
+
+<script type="text/javascript">
+function dump(a) {console.log(a)}
+	var addBtnAddPhoto = $("#add-photo");
+	var i = 0;
+	function photoInput(i) {
+		return '<div class="form-group"><label for="photo#'+ i +'">Photo#' + i + '</label><input type="file" class="form-control" name="photos" id="photo#'+ i +'"><a href="#" class="photos"><i class="fa fa-times" aria-hidden="true"></i>Remove</a></div>'
+	}
+	var i = 0;
+	addBtnAddPhoto.click(function(e){
+		e.preventDefault();
+		parent = addBtnAddPhoto.parent();
+		parent.prev().after(photoInput(++i));
+	});	
+
+	$("#uploadForm").on("click",".photos",function(evt){
+		evt.preventDefault();
+		var form = document.getElementById("uploadForm");
+		form.removeChild(this.parentElement);
+	});
+</script>

@@ -9,11 +9,15 @@
 			<i class="fa fa-times" aria-hidden="true"></i>
 		</button>
 	  <ul>
-	  	<li><a href="#">Category 1</a></li>
-	  	<li><a href="#">Category 1</a></li>
-	  	<li><a href="#">Category 1</a></li>
-	  	<li><a href="#">Category 1</a></li>
-	  	<li><a href="#">Category 1</a></li>
+	  	{{#if new_album_path }}
+	  		<li><a href="{{new_album_path}}">New Albums</a></li>
+	  	{{else}}
+	  		<li><a href="#">Category 1</a></li>
+		  	<li><a href="#">Category 1</a></li>
+		  	<li><a href="#">Category 1</a></li>
+		  	<li><a href="#">Category 1</a></li>
+		  	<li><a href="#">Category 1</a></li>
+	  	{{/if}}
 	  </ul>
 	</div>
 </div>
