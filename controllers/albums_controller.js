@@ -62,7 +62,7 @@ router.post('/create', cpUpload, validateFileUpload, function(req, res, next) {
 	var album = models.Album.create({
   	cover: req.files['album'][0].filename,
   	views: 0,
-  	// author: req.user.name
+  	author: req.user.name
   }).then(function(thisAlbum){
   		if(req.files['photos']){
 				var j = 0;
@@ -71,7 +71,8 @@ router.post('/create', cpUpload, validateFileUpload, function(req, res, next) {
 					var photo = models.Photo.create({
 				  	photo: req.files['photos'][j].filename,
 				  	views: 0,
-				  	album_id: thisAlbum.id
+				  	album_id: thisAlbum.id,
+				  	author: req.user.name
 				  });
 				}
 			}
